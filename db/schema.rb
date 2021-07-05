@@ -26,9 +26,8 @@ ActiveRecord::Schema.define(version: 2021_07_04_101446) do
   create_table "users", force: :cascade do |t|
     t.string "provider", null: false
     t.string "uid", null: false
-    t.string "name", null: false
-    t.string "email", null: false
-    t.string "avatar", null: false
+    t.string "name"
+    t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true

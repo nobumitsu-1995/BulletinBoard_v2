@@ -142,7 +142,6 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.7-arm64-darwin)
       racc (~> 1.4)
-    oauth (0.5.6)
     oauth2 (1.4.7)
       faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
@@ -153,22 +152,17 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
       rack-protection
-    omniauth-facebook (8.0.0)
-      omniauth-oauth2 (~> 1.2)
     omniauth-google-oauth2 (1.0.0)
       jwt (>= 2.0)
       oauth2 (~> 1.1)
       omniauth (~> 2.0)
       omniauth-oauth2 (~> 1.7.1)
-    omniauth-oauth (1.2.0)
-      oauth
-      omniauth (>= 1.0, < 3)
     omniauth-oauth2 (1.7.1)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
-    omniauth-twitter (1.4.0)
-      omniauth-oauth (~> 1.1)
-      rack
+    omniauth-rails_csrf_protection (1.0.0)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     pg (1.2.3)
     public_suffix (4.0.6)
     puma (5.3.2)
@@ -298,9 +292,8 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.3)
-  omniauth-facebook
   omniauth-google-oauth2
-  omniauth-twitter
+  omniauth-rails_csrf_protection
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)

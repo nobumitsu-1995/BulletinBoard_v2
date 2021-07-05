@@ -1,0 +1,12 @@
+<div class="p-3 bg-light border-bottom border-info" id="post_<%= post.id %>">
+  <div class="row">
+    <p class="col-1 m-0"><%= post.id %></p>
+    <p class="col-4 m-0"><%= user_name(post) %></p>
+    <p class="col-7 m-0 text-right"><%= l post.created_at %></p>
+  </div>
+  <hr class="my-1">
+  <p class="h6"><%= post.content %></p>
+  <% if current_user && current_user.id == post.user_id %>
+  <%= link_to "削除", post_path(post), method: :delete, remote: true %>
+  <% end %>
+</div>

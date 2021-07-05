@@ -9,8 +9,25 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <header>
+      <nav class="navbar navbar-expand-lg text-white">
+        <div class="navbar-brand">掲示板</div>
+        <div class="navbar-nav ml-auto">
+          <% if logged_in? %>
+            <a class="nav-item nav-link" data-toggle="modal" data-target="#modal">ログイン中のユーザー：<%= current_user.name %></a>
+            <%= render "users/modal" %>
+            <%= link_to("ログアウト", logout_path, method: :delete, class: "nav-item nav-link") %>
+          <% else %>
+            <%= link_to("ログイン", "/auth/google_oauth2", method: :post, class: "nav-item nav-link") %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+    <%= notice_msg %>
+    <%= alert_msg %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
