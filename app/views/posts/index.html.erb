@@ -1,7 +1,9 @@
 <%= render "form", post: @post  %>
 <hr color="#026873">
 <div class="container">
-  <div id="posts">
+  <%= paginate @posts %>
+  <div id="posts" class="mb-3">
     <%= render @posts %>
   </div>
+  <%= paginate @posts %>
 </div>
