@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :delete_all
+  validates :provider, presence: true
+  validates :uid, presence: true, uniqueness: true
+  validates :name, presence: true
 
   def self.find_or_create_account(hash)
     provider = hash[:provider]
