@@ -13,7 +13,7 @@
 ## データベース設計について
 データベースの設計に関しては以下のER図の通りとなります。
 
-<img width="800" alt="ER" src="./public/ER.png">
+<img width="441" alt="ER" src="./public/images/bulletin_board_ER.png">
 
 ## 使用した技術スタック
 Bootstrap,　Javascript, Ruby on Rails, PostgreSQL, Heroku, Google API
@@ -21,3 +21,5 @@ Bootstrap,　Javascript, Ruby on Rails, PostgreSQL, Heroku, Google API
 ## 使用している主なgemについて
 - Rspec：　Railsの代表的なテストツールの一つ。単体テスト、統合テストを実行するために使用しました。
 - Factory Bot：　テストのサンプルデータを簡単に作成することができるgem。
+- omniauth-google-oauth2：　google認証機能を使用したログイン機能を実装するためのgem。
+- kaminari：　ページネーション機能を作成するためのgem。
