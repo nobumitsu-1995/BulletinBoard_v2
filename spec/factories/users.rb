@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :user do
-    uid { "MyString" }
-    name { "MyString" }
-    email { "MyString" }
+    provider {"test"}
+    sequence(:uid) { |i| "user_id#{i}" }
+    sequence(:name) { |i| "user#{i}" }
     avatar { "MyString" }
   end
 end

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    content { "MyString" }
-    user { nil }
+    sequence(:content) { |i| "#{i}" }
+    association :user
   end
 end

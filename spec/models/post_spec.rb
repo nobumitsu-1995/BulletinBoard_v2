@@ -22,5 +22,5 @@ RSpec.describe Post, type: :model do
         expect(post.errors[:content]).to include("は200文字以内で入力してください")
       end
     end
-  end
+  end  
 end
