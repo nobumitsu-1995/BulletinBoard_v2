@@ -1,7 +1,12 @@
 # BulletinBoard_v2について
 本アプリケーションは、Ajax処理を取り入れた掲示板です。APIを利用したログイン機能やAJAX処理、N＋１問題の解決方法といったより実践的な技術について学ぶために作成をしました。ログインをして掲示板に投稿、削除ができ、チャットすることができます。
-
+<br><br>
+以下の情報でログイン可能です。<br><br>
+メールアドレス：test.user.for.portfolio@gmail.com<br>
+パスワード：Testuser2021
+<br>
 - [アプリケーションURL](https://ajaxbulletinboard.herokuapp.com/)
+<img width="1000" alt="top画像" src="./public/images/bulletinboard_top.png">
 
 ## 実装機能について
 実装されている機能に関しては以下のようになっています。
