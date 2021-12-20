@@ -44,12 +44,22 @@ document.getElementById('post_content').value = ""; <% # ② %>
 <% # create.jsの②は以下のフォームをリセットする。 %>
 <%= form.text_area :content, id: "post_content", style: "width: 400px; height: 100px; resize: none;"%> 
 ```
-![create_destroy_post](https://user-images.githubusercontent.com/70850598/146755168-784c58bd-2c58-44bc-a6ae-d18e1036f5b9.gif)
+![create_destroy_post](https://user-images.githubusercontent.com/70850598/146755168-784c58bd-2c58-44bc-a6ae-d18e1036f5b9.gif)<br>
 3. ゲストユーザーによる投稿機能<br>
 ゲストユーザーによる投稿は削除できないようにしました。
-![guest_user](https://user-images.githubusercontent.com/70850598/146755215-1f38fbd2-93ce-49e9-bde1-f917790dd915.gif)
+![guest_user](https://user-images.githubusercontent.com/70850598/146755215-1f38fbd2-93ce-49e9-bde1-f917790dd915.gif)<br>
 4. gem「kaminari」を使用したページネーション機能<br>
 投稿は２０件ごとでページが分割されるようにページネーション機能を実装しました。
+また、N＋１問題は以下のようにモデルを関連づけ、includesメソッドを使用することで回避しました。
+```ruby:models/post.rb
+belongs_to :user, optional: true
+```
+```ruby:models/user.rb 
+has_many :posts, dependent: :delete_all
+```
+```ruby:posts_controller.rb 
+@posts = Post.includes(:user).page(params[:page]).per(20).order(id: "desc")
+```
 ![pagenation](https://user-images.githubusercontent.com/70850598/146756750-57f345be-4139-468d-991a-cf3d6bcd1933.gif)
 
 ## データベース設計について
