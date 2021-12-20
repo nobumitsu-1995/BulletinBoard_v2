@@ -34,7 +34,7 @@ Google APIを利用して実装しました。既存のGoogleアカウントを�
 <img width="441" alt="ER" src="./public/images/bulletin_board_ER.png">
 
 ## 使用した技術スタック
-Bootstrap,　Javascript, Ruby on Rails, PostgreSQL, Heroku, Google API
+Bootstrap, Javascript, Ruby on Rails, PostgreSQL, Heroku, Google API
 
 ## 使用している主なgemについて
 - Rspec：　Railsの代表的なテストツールの一つ。単体テスト、統合テストを実行するために使用しました。
