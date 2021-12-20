@@ -20,6 +20,30 @@ Google APIを利用して実装しました。既存のGoogleアカウントを�
 ![google_login](https://user-images.githubusercontent.com/70850598/146755009-832c29c8-61d7-4ba4-87ef-b7c8b1bf78b2.gif)
 2. 掲示板に投稿、削除をする機能<br>
 掲示板への投稿や削除はAJAX通信で行うように実装しました。
+```ruby:posts/create.js.erb
+document.getElementById('posts').insertAdjacentHTML('afterbegin', '<%= j(render @post) %>'); <% # ① %>
+document.getElementById('post_content').value = ""; <% # ② %>
+```
+
+```ruby:posts/index.html.erb
+<%= render "form", post: @post  %>  <% # 以下のform部分を描画するコード %>
+<hr color="#026873">
+<div class="container">
+  <%= paginate @posts %> 
+  <div id="posts" class="mb-3">
+<% # create.jsの①はここに作成されたpostを描画する。 %>
+    <%= render @posts %>
+  </div>
+  <%= paginate @posts %>
+</div>
+```
+
+```ruby:posts/_form.html.erb
+<% # form部分のコード（一部抜粋） %>
+<%= form_with(model: post, local: false) do |form| %> # local: falseを設定することでこのフォームはajax通信をする。
+<% # create.jsの②は以下のフォームをリセットする。 %>
+<%= form.text_area :content, id: "post_content", style: "width: 400px; height: 100px; resize: none;"%> 
+```
 ![create_destroy_post](https://user-images.githubusercontent.com/70850598/146755168-784c58bd-2c58-44bc-a6ae-d18e1036f5b9.gif)
 3. ゲストユーザーによる投稿機能<br>
 ゲストユーザーによる投稿は削除できないようにしました。
