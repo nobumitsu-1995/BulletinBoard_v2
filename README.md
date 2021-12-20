@@ -21,8 +21,8 @@ Google APIを利用して実装しました。既存のGoogleアカウントを�
 2. 掲示板に投稿、削除をする機能<br>
 掲示板への投稿や削除はAJAX通信で行うように実装しました。
 ```ruby:posts/create.js.erb
-document.getElementById('posts').insertAdjacentHTML('afterbegin', '<%= j(render @post) %>'); <% # ① %>
-document.getElementById('post_content').value = ""; <% # ② %>
+document.getElementById('posts').insertAdjacentHTML('afterbegin', '<%= j(render @post) %>'); <% // ① %>
+document.getElementById('post_content').value = ""; <% // ② %>
 ```
 
 ```ruby:posts/index.html.erb
