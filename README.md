@@ -52,9 +52,11 @@ document.getElementById('post_content').value = ""; <% # ② %>
 投稿は２０件ごとでページが分割されるようにページネーション機能を実装しました。
 また、N＋１問題は以下のようにモデルを関連づけ、includesメソッドを使用することで回避しました。
 ```ruby:models/post.rb
+# PostモデルはUserモデルに従属の関係である。また、ゲストユーザーの投稿はユーザー情報を持たないためoptional: trueを追加。
 belongs_to :user, optional: true
 ```
-```ruby:models/user.rb 
+```ruby:models/user.rb
+# UserモデルはたくさんのPostを所有している関係である。
 has_many :posts, dependent: :delete_all
 ```
 ```ruby:posts_controller.rb 
