@@ -10,10 +10,14 @@
 
 ## 実装機能について
 実装されている機能に関しては以下のようになっています。
-- Googleのアカウントを利用したログイン機能。
-- 掲示板に投稿、削除をする機能。
-- ゲストユーザーによる投稿機能。
-- gem「kaminari」を使用したページネーション機能。
+- Googleのアカウントを利用したログイン機能。<br>
+![google_login](https://user-images.githubusercontent.com/70850598/146755009-832c29c8-61d7-4ba4-87ef-b7c8b1bf78b2.gif)
+- 掲示板に投稿、削除をする機能。<br>
+![create_destroy_post](https://user-images.githubusercontent.com/70850598/146755168-784c58bd-2c58-44bc-a6ae-d18e1036f5b9.gif)
+- ゲストユーザーによる投稿機能。<br>
+![guest_user](https://user-images.githubusercontent.com/70850598/146755215-1f38fbd2-93ce-49e9-bde1-f917790dd915.gif)
+- gem「kaminari」を使用したページネーション機能。<br>
+![pagenation](https://user-images.githubusercontent.com/70850598/146756750-57f345be-4139-468d-991a-cf3d6bcd1933.gif)
 
 ## データベース設計について
 データベースの設計に関しては以下のER図の通りとなります。
